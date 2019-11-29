@@ -1,0 +1,54 @@
+<br>
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col" [@bounce]="bounce">
+        <div class="card" style="width: 48rem;">
+          <img src="assets/ZipDevLogo.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-center">Results are Displayed Below</h5>
+            <p class="card-text text-center">1.- How do you describe yourself as a developer?</p>
+            <p class="card-text text-center" style="background-color: aquamarine;">Your Answer:  {{ answer1 }}</p>
+              <br>
+            <p class="card-text text-center">2.- Select the JavaScript based technologies:</p>
+            <p class="card-text text-center" style="background-color: aquamarine;">Your Answer:  {{ answer2 }}</p>
+            <alert type="danger" *ngIf="!isCorrectAnswer2">
+                <strong>Incorrect!</strong> Incorrect Answer, The Correct Answer is AngularJS VueJS Ember
+            </alert>
+            <alert type="success" *ngIf="isCorrectAnswer2">
+                <strong>Correct!</strong> You got it!.
+            </alert>
+               <br>
+            <p class="card-text text-center">3.- Please Type In a Palindrome</p>
+            <p class="card-text text-center" style="background-color: aquamarine;">Your Answer:  {{ answer3 }}</p>
+            <alert type="danger" *ngIf="!isCorrectAnswer3">
+                <strong>Incorrect!</strong> {{ answer3 }} is not a Palindrome
+            </alert>
+            <alert type="success" *ngIf="isCorrectAnswer3">
+                <strong>Correct!</strong> You got it!, {{ answer3 }} is a Palindrome
+            </alert>
+               <br>
+            <p class="card-text text-center">4.- Please Type In a sentence and its reverse sentence</p>
+            <p class="card-text text-center" style="background-color: aquamarine;">Your Answers: {{ answer4 }}</p>
+            <alert type="danger" *ngIf="!isCorrectAnswer4">
+                <strong>Incorrect!</strong> {{ answer4 }} is not a Palindrome
+            </alert>
+            <alert type="success" *ngIf="isCorrectAnswer4">
+                <strong>Correct!</strong> You got it!, {{ answer4 }} is a Palindrome
+            </alert>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        
+      </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <div class="col-sm-10" style="margin: auto; width:10%">
+            <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="clickDisplayListRestaurants()">Display Message</button>
+        </div>
+    </div>
+</div>

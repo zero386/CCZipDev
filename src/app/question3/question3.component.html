@@ -1,0 +1,35 @@
+<br>
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        
+      </div>
+      <div class="col" [@bounce]="bounce">
+        <div class="card" style="width: 38rem;">
+          <img src="assets/ZipDevLogo.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Please Type In a Palindrome</h5>
+            <form [formGroup]="palindromeForm" (ngSubmit)="clickNextQuestion()">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Palindrome</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="palindrome">
+                    <alert type="danger" *ngIf="(palindromeText.dirty || palindromeText.touched) && palindromeText.errors">
+                      <strong>Error!</strong> Palindrome is required.
+                    </alert>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-10" style="margin: auto; width:10%">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!palindromeForm.valid">Next</button>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        
+      </div>
+    </div>
+</div>
+
